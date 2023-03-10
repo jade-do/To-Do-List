@@ -6,16 +6,17 @@ const date = require(__dirname + "/date.js");
 
 const app = express();
 
+app.use(express.static("public")); // folder used as static folder
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.set('view engine', 'ejs'); // app uses EJS as its view engine
+
+
 const items = ["Buy Food", "Cook Food", "Eat Food"];
 const workItems = ["Write report"];
 const schoolItems = ["Write essay"];
 const vacationItems = ["Book flight ticket", "Pack luggage", "Book hotel room"];
 
-app.use(express.static("public")); // folder used as static folder
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
-
-app.set('view engine', 'ejs'); // app uses EJS as its view engine
 
 app.get("/", function(req, res) {
 
