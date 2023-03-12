@@ -16,6 +16,7 @@ app.set('view engine', 'ejs'); // app uses EJS as its view engine
 
 const uri = "mongodb+srv://thanhchaudo522:VKLs6CbXBBlOuIXw@cluster0.x2fbny8.mongodb.net/";
 //const uri = "mongodb://127.0.0.1:27017/";
+
 mongoose.connect(uri + "todoListDB", {useNewUrlParser: true});
 
 const itemsSchema = new mongoose.Schema({
